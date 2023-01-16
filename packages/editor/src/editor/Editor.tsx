@@ -11,6 +11,8 @@ import { HTMLRenderer } from '../renderer/HTMLRenderer';
 
 const EditableEditor = lazyLoad(() => import('./EditableEditor'));
 
+const Loading = () => <div>Loading Editor</div>;
+
 export type EditorProps = {
   /**
    * the current value to display
@@ -72,7 +74,7 @@ const Editor: FC<PropsWithChildren<EditorProps>> = ({
   ) : (
     <EditableEditor
       fallback={
-        <HTMLRenderer
+        <Loading
           value={value}
           cellPlugins={cellPlugins}
           lang={lang}
