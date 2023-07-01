@@ -108,6 +108,7 @@ export const PluginDrawer: React.FC = React.memo(() => {
               placeholder={t(defaultLabels.searchPlaceholder) ?? ''}
               fullWidth={true}
               onChange={onSearch}
+              data-testid="plugin-search"
             />
           </ListItem>
           {filteredPlugins.length === 0 && (
