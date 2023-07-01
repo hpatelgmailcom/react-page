@@ -45,7 +45,7 @@ const Editor: FC<PropsWithChildren<EditorProps>> = ({
   ...options
 }) => {
   // mount the component always in readonly, to avoid problems with SSR
-  const [renderReadOnly, setRenderReadOnly] = useState(true);
+  const [renderReadOnly, setRenderReadOnly] = useState(false);
   useEffect(() => {
     setRenderReadOnly(readOnly);
   }, [readOnly]);
@@ -73,14 +73,7 @@ const Editor: FC<PropsWithChildren<EditorProps>> = ({
     />
   ) : (
     <EditableEditor
-      fallback={
-        <Loading
-          value={value}
-          cellPlugins={cellPlugins}
-          lang={lang}
-          cellSpacing={cellSpacing}
-        />
-      }
+      fallback={<Loading />}
       value={value}
       lang={lang}
       options={options}

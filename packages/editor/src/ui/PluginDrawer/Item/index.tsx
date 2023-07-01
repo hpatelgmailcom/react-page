@@ -21,6 +21,8 @@ type ItemProps = {
 
 const Item: React.FC<ItemProps> = ({ plugin, insert }) => {
   const title = plugin.title ?? plugin.text;
+  const id = plugin.id;
+  const version = plugin.version;
   const { t } = useUiTranslator();
   if (!plugin.icon && !title) {
     return null;
@@ -36,6 +38,7 @@ const Item: React.FC<ItemProps> = ({ plugin, insert }) => {
   return (
     <Draggable insert={insert}>
       <ListItem
+        data-testid={`${id}-${version}`}
         title={
           t('Click to add or drag and drop it somewhere on your page!') ?? ''
         }

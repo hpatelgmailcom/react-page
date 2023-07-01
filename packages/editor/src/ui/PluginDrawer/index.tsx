@@ -93,6 +93,7 @@ export const PluginDrawer: React.FC = React.memo(() => {
         PaperProps={{
           style: {
             width: 320,
+            zIndex: 1201,
           },
         }}
       >
